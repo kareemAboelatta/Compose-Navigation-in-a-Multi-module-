@@ -8,29 +8,18 @@ import androidx.navigation.NavHostController
 import com.example.core.utils.LocalNavController
 import com.example.core.utils.Routes
 
-
 @Composable
 fun ChatScreen() {
-
-
     val navController = LocalNavController.current
-
-
-
-
-
     Column {
-        Text(text = "Chat  Screen")
-        Button(onClick = { navController.navigate(Routes.Quiz.route) }) {
-            Text("Start Quiz")
+        Text(text = "Chat Screen")
+        Button(onClick = { navController.navigate(Routes.Chat.Profile.route) }) {
+            Text("Go to Profile")
         }
-
-        Button(onClick = {
-
-        }) {
-            Text(text = "To Home Screen")
+        Button(onClick = { navController.navigate(Routes.Chat.Group.route) }) {
+            Text("Go to Group")
         }
-
+        //... other buttons
 
         Button(onClick = {
             navController.popBackStack()
@@ -38,12 +27,16 @@ fun ChatScreen() {
             Text(text = "back to home screen ")
         }
 
+        Button(onClick = { navController.navigate(Routes.Quiz.route) }) { //quiz screen
+            Text("Start Quiz")
+        }
+
 
 
 
     }
-
 }
+
 
 
 

@@ -14,12 +14,10 @@ fun HomeScreen() {
 
     val navController = LocalNavController.current
 
-
-
     Column {
         Text(text = "Home  Screen")
         Button(onClick = {
-            navController.navigate(Routes.Chat.route)
+            navController.navigate(Routes.Chat.Main.route)
         }) {
             Text(text = "To Chat Screen")
         }
