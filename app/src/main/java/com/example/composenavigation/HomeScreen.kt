@@ -17,7 +17,8 @@ fun HomeScreen() {
     Column {
         Text(text = "Home  Screen")
         Button(onClick = {
-            navController.navigate(Routes.Chat.Main.route)
+//            navController.navigate("chat/main/HelloChat")
+            navController.navigate(Routes.Chat.Main.toMainChat("HelloChat"))
         }) {
             Text(text = "To Chat Screen")
         }

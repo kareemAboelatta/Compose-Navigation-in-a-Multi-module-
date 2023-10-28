@@ -9,14 +9,20 @@ import com.example.core.utils.LocalNavController
 import com.example.core.utils.Routes
 
 @Composable
-fun ChatScreen() {
+fun ChatScreen(data : String) {
     val navController = LocalNavController.current
     Column {
-        Text(text = "Chat Screen")
-        Button(onClick = { navController.navigate(Routes.Chat.Profile.route) }) {
+        Text(text = "Chat Screen: data: $data")
+        Button(onClick = {
+
+            navController.navigate(Routes.Chat.Profile.route)
+        }) {
             Text("Go to Profile")
         }
-        Button(onClick = { navController.navigate(Routes.Chat.Group.route) }) {
+        Button(onClick = {
+            navController.navigate("chat/group/HelloGroup")
+
+        }) {
             Text("Go to Group")
         }
         //... other buttons

@@ -8,10 +8,10 @@ import com.example.core.utils.Routes
 
 
 @Composable
-fun GroupScreen() {
+fun GroupScreen(message: String) {
     val navController = LocalNavController.current
 
-    Text(text = "Group Screen")
+    Text(text = "Group Screen message : $message")
 
     // ...
     Button(onClick = { navController.navigate(Routes.Chat.Profile.route) }) {

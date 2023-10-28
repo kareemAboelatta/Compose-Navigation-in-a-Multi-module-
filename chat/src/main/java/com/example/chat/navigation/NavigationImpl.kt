@@ -5,6 +5,7 @@ import com.example.chat.ui.ChatScreen
 import com.example.chat.ui.GroupScreen
 import com.example.chat.ui.ProfileScreen
 import com.example.core.utils.ChatNavigationContract
+import com.example.core.utils.LocalNavController
 import com.example.core.utils.NavigationEntry
 import com.example.core.utils.Routes
 
@@ -16,7 +17,9 @@ class ChatNavigationImpl : ChatNavigationContract {
         object : NavigationEntry {
             override val route = Routes.Chat.Main.route
             override val composable = @Composable {
-                ChatScreen()
+                val navController = LocalNavController.current
+                val data = navController.currentBackStackEntry?.arguments?.getString("data") ?: "kareem"
+                ChatScreen(data = data)
             }
         },
         object : NavigationEntry {
@@ -28,7 +31,9 @@ class ChatNavigationImpl : ChatNavigationContract {
         object : NavigationEntry {
             override val route = Routes.Chat.Group.route
             override val composable = @Composable {
-                GroupScreen()
+                val navController = LocalNavController.current
+                val message = navController.currentBackStackEntry?.arguments?.getString("message") ?: "Kareem"
+                GroupScreen(message = message)
             }
         }
     )

@@ -14,7 +14,10 @@ fun ProfileScreen() {
 
     val navController = LocalNavController.current
     // ...
-    Button(onClick = { navController.navigate(Routes.Chat.Group.route) }) {
+    Button(onClick = {
+        navController.navigate("chat/group/HelloGroup")
+
+    }) {
         Text(text = "Navigate To Group")
     }
 
