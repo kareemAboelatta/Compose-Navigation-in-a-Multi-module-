@@ -20,7 +20,7 @@ fun ChatScreen(data : String) {
             Text("Go to Profile")
         }
         Button(onClick = {
-            navController.navigate("chat/group/HelloGroup")
+            navController.navigate(Routes.Chat.Group.withData(groupId = "Kareem GroupId"))
 
         }) {
             Text("Go to Group")

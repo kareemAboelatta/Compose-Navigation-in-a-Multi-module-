@@ -18,7 +18,7 @@ class ChatNavigationImpl : ChatNavigationContract {
             override val route = Routes.Chat.Main.route
             override val composable = @Composable {
                 val navController = LocalNavController.current
-                val data = navController.currentBackStackEntry?.arguments?.getString("data") ?: "kareem"
+                val data = navController.currentBackStackEntry?.arguments?.getString(Routes.Chat.ARG_ID) ?: ""
                 ChatScreen(data = data)
             }
         },
@@ -32,7 +32,7 @@ class ChatNavigationImpl : ChatNavigationContract {
             override val route = Routes.Chat.Group.route
             override val composable = @Composable {
                 val navController = LocalNavController.current
-                val message = navController.currentBackStackEntry?.arguments?.getString("message") ?: "Kareem"
+                val message = navController.currentBackStackEntry?.arguments?.getString(Routes.Chat.ARG_GROUP_ID) ?: ""
                 GroupScreen(message = message)
             }
         }
