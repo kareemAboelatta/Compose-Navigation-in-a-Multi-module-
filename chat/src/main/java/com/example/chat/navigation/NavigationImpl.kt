@@ -13,6 +13,7 @@ import com.example.core.utils.Routes
 // ChatNavigationImpl.kt in the chat module
 
 class ChatNavigationImpl : ChatNavigationContract {
+
     override val entries: List<NavigationEntry> = listOf(
         object : NavigationEntry {
             override val route = Routes.Chat.Main.route

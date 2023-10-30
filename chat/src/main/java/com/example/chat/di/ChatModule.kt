@@ -20,6 +20,4 @@ object ChatModule {
     @Singleton
     fun provideChatNavigationContract(): ChatNavigationContract =  ChatNavigationImpl()
 
-
-
 }
