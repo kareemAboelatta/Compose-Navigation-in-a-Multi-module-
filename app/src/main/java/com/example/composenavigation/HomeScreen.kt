@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import com.example.chat.navigation.ChatRoutes
 import com.example.core.utils.LocalNavController
 import com.example.core.utils.Routes
 
@@ -16,7 +17,7 @@ fun HomeScreen() {
     Column {
         Text(text = "Home  Screen")
         Button(onClick = {
-            navController.navigate(Routes.Chat.Main.withData("HelloChat"))
+            navController.navigate(ChatRoutes.Main.withData("HelloChat"))
         }) {
             Text(text = "To Chat Screen")
         }

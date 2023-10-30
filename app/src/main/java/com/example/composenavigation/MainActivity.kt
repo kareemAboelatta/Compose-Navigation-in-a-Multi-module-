@@ -10,10 +10,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
+import com.example.chat.navigation.ChatRoutes
 import com.example.composenavigation.ui.theme.ComposeNavigationTheme
 import com.example.core.utils.ChatNavigationContract
 import com.example.core.utils.LocalNavController
 import com.example.core.utils.Routes
+import com.example.quiz.navigation.QuizRoutes
 import com.example.quiz.ui.QuizScreen
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -42,12 +44,12 @@ class MainActivity : ComponentActivity() {
                             HomeScreen()
                         }
 
-                        composable(Routes.Quiz.route) {
+                        composable(QuizRoutes.Main.route) {
                             // Quiz Screen (this will navigate to the quiz module's main screen)
                             QuizScreen()
                         }
 
-                        navigation(route = Routes.Chat.BASE_ROUTE, startDestination = Routes.Chat.Main.route){
+                        navigation(route = ChatRoutes.BASE_ROUTE, startDestination = ChatRoutes.Main.route){
                             // Register chat module screens
                             chatNavigator.entries.forEach { entry ->
                                 composable(entry.route) {

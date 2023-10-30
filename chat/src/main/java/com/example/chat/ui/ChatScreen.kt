@@ -5,8 +5,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import com.example.chat.navigation.ChatRoutes
 import com.example.core.utils.LocalNavController
 import com.example.core.utils.Routes
+import com.example.quiz.navigation.QuizRoutes
 
 @Composable
 fun ChatScreen(data : String) {
@@ -15,12 +17,12 @@ fun ChatScreen(data : String) {
         Text(text = "Chat Screen: data: $data")
         Button(onClick = {
 
-            navController.navigate(Routes.Chat.Profile.route)
+            navController.navigate(ChatRoutes.Profile.route)
         }) {
             Text("Go to Profile")
         }
         Button(onClick = {
-            navController.navigate(Routes.Chat.Group.withData(groupId = "Kareem GroupId"))
+            navController.navigate(ChatRoutes.Group.withData(groupId = "Kareem GroupId"))
 
         }) {
             Text("Go to Group")
@@ -33,7 +35,7 @@ fun ChatScreen(data : String) {
             Text(text = "back to home screen ")
         }
 
-        Button(onClick = { navController.navigate(Routes.Quiz.route) }) { //quiz screen
+        Button(onClick = { navController.navigate(QuizRoutes.Main.route) }) { //quiz screen
             Text("Start Quiz")
         }
 
